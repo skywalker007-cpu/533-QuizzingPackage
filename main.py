@@ -12,15 +12,21 @@ def main():
     Q8 = Question.ShortAnswerQuestion(8, "What is the capital of France?", "Paris", 1, "Please answer in one word")
     Q9 = Question.TrueFalseQuestion(9, "Is Paris the capital of France?", "True", 1, ["True", "False"])
     
-    quiz = Quiz()
+    quiz_1 = Quiz()
     
-    quiz.add(Q1)
-    quiz.add(Q2)
-    quiz.add(Q3)
-    quiz.add([Q4, Q5, Q6, Q7])
-    quiz.add({8: Q8, 9: Q9})
+    quiz_1.add(Q1)
+    quiz_1.add(Q2)
+    quiz_1.add(Q3)
+    quiz_1.add([Q4, Q5, Q6, Q7])
+    quiz_1.add({8: Q8, 9: Q9})
     
-    print(quiz)
+    
+    quiz_2 = Quiz([Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9])
+    quiz_2.remove(3)
+    quiz_2.remove([1, 9, 8, 7, 5, 2, 4])
+    
+    print(quiz_1)
+    print(quiz_2)
 
 if __name__ == "__main__":
     main()

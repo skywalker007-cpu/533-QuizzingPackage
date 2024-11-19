@@ -1,10 +1,12 @@
 import Question
 
 class Quiz():
-    def __init__(self, questions = {}, responses = {}, API_KEY = None):
+    def __init__(self, questions = None, responses = {}, API_KEY = None):
         self.total_score = 0
         
-        self.questions = questions
+        self.questions = {}
+        if questions is not None:
+            self.add(questions)
         self.responses = responses
         self.API_KEY = API_KEY
     def __str__(self):
@@ -45,7 +47,7 @@ class Quiz():
                 raise Exception("Invalid Type Error:" + str(type(questions)) + " is not a valid question type")
         except Exception as e:
             print(e)
-    def remove(self, question_id):
+    def remove(self, question_ids):
         """
         Remove a question from the quiz.
         :param question_id: ID of the question to be removed.
@@ -53,9 +55,24 @@ class Quiz():
         :return: None
         """
         try:
-            if question_id in self.questions:
-                del self.questions[question_id]
+            if isinstance(question_ids, list):
+                for question_id in question_ids:
+                    if question_id in self.questions:
+                        del self.questions[question_id]
+                    else:
+                        raise Exception("ID Error: Question ID " + str(question_id) + " does not exist")
+            elif isinstance(question_ids, int):
+                if question_ids in self.questions:
+                    del self.questions[question_ids]
+                else:
+                    raise Exception("ID Error: Question ID " + str(question_ids) + " does not exist")
             else:
-                raise Exception("ID Error: Question ID " + str(question_id) + " does not exist")
+                raise Exception("Invalid Type Error:" + str(type(question_ids)) + " is not a valid question ID type")
         except Exception as e:
             print(e)
+    def clone(self):
+        """
+        Clone the quiz object.
+        :return: Quiz object
+        """
+        return Quiz(self.questions, {}, self.API_KEY)
