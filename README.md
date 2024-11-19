@@ -1,32 +1,86 @@
-# Quizzing Python Package Description
+# Quiz Python Package Description
+
+## [Table of Contents](#table-of-contents)
+
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [List of Classes](#list-of-classes)
+  - [Quiz](#quiz)
+  - [Question](#question)
+  - [Response](#response)
+
+<a name="description"></a>
+
+## Description
+
+The Quiz Python package is a package that allows users to create quizzes and take them. The package includes three classes: `Quiz`, `Question`, and `Response`. The `Quiz` class is the main class of the package and is used to create a quiz object. The `Question` class represents a question in the quiz, and the `Response` class represents a response from a student to a question in the quiz. The package also includes three subclasses of the `Question` class: `MultipleChoiceQuestion`, `ShortAnswerQuestion`, and `TrueFalseQuestion`.
+
+<a name="installation"></a>
+
+## Installation
+
+To install the Quizzing package, you can use the following command:
+
+```bash
+pip install git+
+```
+
+<a name="usage"></a>
+
+## Usage
+
+- Import the Quizzing package:
+
+  ```python
+  from quizzing import Quizzing
+  ```
+
+- Create a quiz object:
+
+  ```python
+  quiz = Quiz()
+  # OR
+  quiz = Quiz(questions, responses, API_KEY)
+  ```
+
+  - `questions` Optional (List[Question]): A list of `Question` objects that represent the questions in the quiz.
+  - `responses` Optional (List[Response]): A list of `Response` objects that represent the responses to the quiz.
+  - `API_KEY` Optional (str): The API key used to access the OpenAI API for marking the responses.
+
+<a name="list-of-classes"></a>
 
 ## List of Classes
 
-### `Quizzing`
+<a name="quiz"></a>
 
-- **Description**: This class is the main class of the package. It is used to create a quiz object.
+### `Quiz`
+
+- **Description**: This class is the main class of the package. It is used to create a quiz object. The class has a list of `Question` objects and a dictionary of `Response` objects. The class also has a method to take the quiz and submit responses, and a method to mark the quiz using the OpenAI API.
 
 #### Included Variables
 
 - `questions`: A list of `Question` objects that each element in the list represent one question from the quiz.
-- `responses`: A list of `Response` objects that each object represent the student's reponse to the quiz.
+- `responses`: A dictionary of `Response` objects that each key-value pair represent the student ID and their response to the quiz.
 - `API_KEY` (str): The API key used to access the OpenAI API for marking the responses.
 
 #### Included Methods
 
-- `__init__(self, questions: List[Question], responses: List[Response], API_KEY: str)`: The constructor method for the `Quizzing` class. It initializes the `questions`, `responses`, and `API_KEY` variables.
+- `__init__(self, questions: List[Question], responses: List[Response], API_KEY: str)`: The constructor method for the `Quiz` class. It initializes the `questions`, `responses`, and `API_KEY` variables.
 - `__str__(self)`: A method that returns a string that list the questions.
-- `add_question(self, question: Question)`: A method that adds a `Question` object to the `questions` list. 
-**(unable to add a question if the quiz has already started, and will show "quiz is already started, and you cannot add question anymore!" to the user for notification.)**
-- `remove_question(self, question: Question)`: A method that removes a `Question` object from the `questions` list. 
-**(unable to add a question if the quiz has already started, and will return corresponding string for notification.)**
+- `add_question(self, question: Question)`: A method that adds a `Question` object to the `questions` list.
+  **(unable to add a question if the quiz has already started, and will show "quiz is already started, and you cannot add question anymore!" to the user for notification.)**
+- `remove_question(self, question: Question)`: A method that removes a `Question` object from the `questions` list.
+  **(unable to add a question if the quiz has already started, and will return corresponding string for notification.)**
 - `add_response(self, response: Response)`: A method that adds a `Response` object after user reply to the question during the quiz to the `responses` list.
-**(unable to add a response if there is no quiz happening, and will return corresponding string for notification.)**
-- `take_quiz(self, student_id)`: A method that allows the user to take the quiz and submit responses. 
-**(unable to take the quiz if there's no questions, and will return corresponding string for notification.)**
-- `mark_quiz(self, student_id, type)`: A method that marks the quiz using the OpenAI API and returns the results *(format - gained score/total score)*. 
-**(unable to mark the quiz if the quiz has not been taken, and will return corresponding string for notification.)**
+  **(unable to add a response if there is no quiz happening, and will return corresponding string for notification.)**
+- `take_quiz(self, student_id)`: A method that allows the user to take the quiz and submit responses.
+  **(unable to take the quiz if there's no questions, and will return corresponding string for notification.)**
+- `mark_quiz(self, student_id, type)`: A method that marks the quiz using the OpenAI API and returns the results _(format - gained score/total score)_.
+  **(unable to mark the quiz if the quiz has not been taken, and will return corresponding string for notification.)**
   - `type`: auto(AI) or manual(human)
+
+<a name="question"></a>
 
 ### `Question`
 
@@ -35,7 +89,7 @@
 #### Included Variables
 
 - `question_id`: The ID of the question.
-- `question`: The text of the question.
+- `description`: The text of the question.
 - `answer`: The correct answer to the question.
 - `score`: The score of the question.
 
@@ -53,14 +107,14 @@
 - `TrueFalseQuestion`: A subclass of `Question` that represents a true/false question.
   - extra attribute: `options` in the `__init__` function: A list of options that only contain true/false.
 
-### `Response` 
+### `Response`
 
 - **Description**: This class represents a response from a student to a question in the quiz. Moreover, the class format is the dictionary format, which is that the student_id is the key, and their answers as response are the values.
 
 #### Included Variables
 
 - `student_id`: The ID of the student who submitted the response.
-- `response`: A list of answers to the questions in the quiz.
+- `response`: a JSON format object that contains the student's response to the question.
 
 #### Included Methods
 
