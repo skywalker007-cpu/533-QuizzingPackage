@@ -44,8 +44,8 @@ pip install git+
   quiz = Quiz(questions, responses, API_KEY)
   ```
 
-  - `questions` Optional (List[Question]): A list of `Question` objects that represent the questions in the quiz.
-  - `responses` Optional (List[Response]): A list of `Response` objects that represent the responses to the quiz.
+  - `questions` Optional (List[Question]): A dictionary of `Question` objects that represent the questions in the quiz.
+  - `responses` Optional (List[Response]): A dictionary of `Response` objects that represent the responses to the quiz.
   - `API_KEY` Optional (str): The API key used to access the OpenAI API for marking the responses.
 
 <a name="list-of-classes"></a>
@@ -60,13 +60,13 @@ pip install git+
 
 #### Included Variables
 
-- `questions`: A list of `Question` objects that each element in the list represent one question from the quiz.
+- `questions`: A dictionary of `Question` objects that each key-value pair represent the question ID and the question.
 - `responses`: A dictionary of `Response` objects that each key-value pair represent the student ID and their response to the quiz.
 - `API_KEY` (str): The API key used to access the OpenAI API for marking the responses.
 
 #### Included Methods
 
-- `__init__(self, questions: List[Question], responses: List[Response], API_KEY: str)`: The constructor method for the `Quiz` class. It initializes the `questions`, `responses`, and `API_KEY` variables.
+- `__init__(self, questions: List[Question], responses: dict[str, Response], API_KEY: str)`: The constructor method for the `Quiz` class. It initializes the `questions`, `responses`, and `API_KEY` variables.
 - `__str__(self)`: A method that returns a string that list the questions.
 - `add_question(self, question: Question)`: A method that adds a `Question` object to the `questions` list.
   **(unable to add a question if the quiz has already started, and will show "quiz is already started, and you cannot add question anymore!" to the user for notification.)**
