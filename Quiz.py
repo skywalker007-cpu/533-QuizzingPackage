@@ -24,6 +24,7 @@ class Quiz():
                         if question.data["Q_id"] in self.questions:
                             raise Exception("Duplicate ID Error: Question ID " + str(question.data["Q_id"]) + " already exists")
                         self.questions[question.data["Q_id"]] = question
+                        self.total_score += question.data["score"]
                     else:
                         raise Exception("Invalid Type Error:" + str(type(question)) + " is not a valid question type")
             elif isinstance(questions, dict):
@@ -34,10 +35,12 @@ class Quiz():
                         if value.data["Q_id"] != key:
                             raise Exception("ID Mismatch Error: Question ID " + str(value.data["Q_id"]) + " does not match the key " + str(key))
                         self.questions[value.data["Q_id"]] = value
+                        self.total_score += value.data["score"]
                     else:
                         raise Exception("Invalid Type Error:" + str(type(value)) + " is not a valid question type")
             elif isinstance(questions, Question.Question):
-                    self.questions[questions.data["Q_id"]] = questions
+                self.questions[questions.data["Q_id"]] = questions
+                self.total_score += questions.data["score"]     
             else:
                 raise Exception("Invalid Type Error:" + str(type(questions)) + " is not a valid question type")
         except Exception as e:
