@@ -60,7 +60,7 @@ pip install git+
 
 #### Included Variables
 
-- `questions`: A dictionary of `Question` objects that each key-value pair represent the question ID and the question.
+- `questions`: A nested dictionary of `Question` objects that each key-value pair represent the question ID and the question object.
 - `responses`: A dictionary of `Response` objects that each key-value pair represent the student ID and their response to the quiz.
 - `API_KEY` (str): The API key used to access the OpenAI API for marking the responses.
 
@@ -84,7 +84,7 @@ pip install git+
 
 ### `Question`
 
-- **Description**: This class represents a question in the quiz, and data format is following a dictionary format, which is that the question's id is the key, and some subkeys that are having corresponding values such as question text and corresponding correct answer, score, and type of the question.
+- **Description**: This class represents a question in the quiz, and data format is following a dictionary format, which the values are question id, question text, correct answer, score, and type of the question with corresponding key.
 
 #### Included Variables
 
@@ -109,9 +109,9 @@ pip install git+
 
 ### `Response`
 
-- **Description**: This class represents a response from a student to a question in the quiz. Moreover, the class format is the dictionary format, which is that the student_id is the key, and their answers as response are the values.
+- **Description**: This class represents a response from a student to a question in the quiz. 
 
-#### Included Variables
+#### Included Variable
 
 - `student_id`: The ID of the student who submitted the response.
 - `response`: a JSON format object that contains the student's response to the question.

@@ -3,22 +3,19 @@ from collections import UserDict
 
 class Question(UserDict):
     """
-    Question class to store question data within a nested dictionary format. We extend the UserDict class to
+    Question class to store question data within a dictionary format. We extend the UserDict class to
     allow us to use the data attribute to access the nested dictionary.
-    :param **kwargs: is used to make class creation work with dictionary function.
     """
 
-    def __init__(self, question_id, question_text, correct_answer, score=1, **kwargs):
+    def __init__(self, question_id, question_text, correct_answer, score=1):
         super().__init__()
         self.data["Q_id"] = question_id
         self.data["question"] = question_text
         self.data["answer"] = correct_answer
         self.data["score"] = score
-        # update key word pairs for the subclass that have additional attribute.
-        self.data.update(kwargs)
 
     def __str__(self):
-        return f"ID: {self.data['id']}, Question: {self.data['question']}, Score: {self.data['score']}"
+        return f"ID: {self.data['Q_id']}, Question: {self.data['question']}, Score: {self.data['score']}"
 
 
 class MultipleChoice(Question):
@@ -26,7 +23,7 @@ class MultipleChoice(Question):
     Multiple choice class to store multiple choice question data.
     """
 
-    def __init__(self, question_id, question_text, correct_answer, score=1, options=None, **kwargs):
+    def __init__(self, question_id, question_text, correct_answer, score=1, options=None):
         super().__init__(question_id, question_text, correct_answer, score)
         if options is None:
             options = []
@@ -42,7 +39,7 @@ class ShortAnswerQuestion(Question):
     Short answer question class to store short answer question data.
     """
 
-    def __init__(self, question_id, question_text, correct_answer, score=1, notice=None, **kwargs):
+    def __init__(self, question_id, question_text, correct_answer, score=1, notice=None):
         super().__init__(question_id, question_text, correct_answer, score)
         # notice attribute can be something like "please answer in one sentence"
         if notice is None:
@@ -59,7 +56,7 @@ class TrueFalseQuestion(Question):
     True false question class to store true false question data.
     """
 
-    def __init__(self, question_id, question_text, correct_answer, score=1, options=None, **kwargs):
+    def __init__(self, question_id, question_text, correct_answer, score=1, options=None):
         super().__init__(question_id, question_text, correct_answer, score)
         if options is None:
             options = ["True", "False"]
