@@ -18,21 +18,24 @@ def main():
 
     quiz_1 = Quiz()
 
-    quiz_1.add(Q1)
-    quiz_1.add(Q2)
-    quiz_1.add(Q3)
-    quiz_1.add([Q4, Q5, Q6, Q7])
-    quiz_1.add({8: Q8, 9: Q9})
+    quiz_1.add_questions(Q1)
+    quiz_1.add_questions(Q2)
+    quiz_1.add_questions(Q3)
+    quiz_1.add_questions([Q4, Q5, Q6, Q7])
+    quiz_1.add_questions({8: Q8, 9: Q9})
 
     quiz_2 = Quiz([Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9])
-    quiz_2.remove(3)
-    quiz_2.remove([1, 9, 8, 7, 5, 2, 4])
+    quiz_2.remove_questions(3)
+    quiz_2.remove_questions([1, 9, 8, 7, 5, 2, 4])
 
     print(quiz_1)
     print(quiz_2)
-    quiz_1.take_quiz("123456789")
+    # quiz_1.add_responses()
     print(quiz_1)
 
+    quiz_1.export_to_markdown()
+    quiz_1.export_to_html()
+    quiz_1.export_to_pdf()
 
 if __name__ == "__main__":
     main()
