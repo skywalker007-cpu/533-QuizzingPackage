@@ -1,6 +1,7 @@
 import unittest
 from Quizzes.quiz import Quiz
 import Questions.question as question
+from Responses.response import Response
 
 class TestQuiz(unittest.TestCase):
     def setUp(self):
@@ -28,9 +29,26 @@ class TestQuiz(unittest.TestCase):
         self.quiz_3 = self.quiz_1.clone()
         self.quiz_for_editing = Quiz()
         
+        self.correct_response_1 = Response("001", ["Paris", "Paris", "True"])
+        self.correct_response_2 = Response("002", ["Paris", "Paris", "True"])
+        self.correct_response_3 = Response("003", ["Paris", "Paris", "True"])
+        self.incorrect_response_1 = Response("004", ["Paris", "Paris", "False"])
+        self.incorrect_response_2 = Response("005", ["Paris", "Paris", "False"])
+        self.incorrect_response_3 = Response("006", ["Paris", "Paris", "False"])
+        
     def test_clone(self):
         self.assertEqual(self.quiz_1, self.quiz_3)
         self.assertNotEqual(self.quiz_1, self.quiz_2)
+        
+        quiz_2_clone_1 = self.quiz_2.clone()
+        quiz_2_clone_2 = self.quiz_2.clone()
+        self.assertEqual(quiz_2_clone_1, quiz_2_clone_2)
+        
+        quiz_2_clone_1.add_questions(self.Q1)
+        self.assertNotEqual(quiz_2_clone_1, quiz_2_clone_2)
+        
+        quiz_2_clone_1.remove_questions(1)
+        self.assertEqual(quiz_2_clone_1, quiz_2_clone_2)
     
     def test_add_and_remove_questions(self):
         self.quiz_for_editing.add_questions(self.Q4)
@@ -50,9 +68,12 @@ class TestQuiz(unittest.TestCase):
         
         self.quiz_for_editing.remove_questions([1,2,3])
         self.assertEqual(0, len(self.quiz_for_editing.questions))
-    
-    def test_add_responses(self):
-        self.quiz_1.add_responses({"123": [1, 2, 3]})
-        print(self.quiz_1.responses['123'])
+          
+    def test_responses(self):
+        self.quiz_1.add_responses({"001" : Response("001", ["Paris", "Paris", "True"])})
+        self.quiz_1.add_responses({"002" : Response("002", ["Paris", "Paris", "True"])})
+        self.quiz_1.add_responses({"003" : Response("003", ["Paris", "Paris", "True"])})
+        self.assertEqual(3, len(self.quiz_1.responses))
         
+
 unittest.main(argv=[''], exit=False)
