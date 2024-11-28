@@ -17,6 +17,9 @@ class Question(UserDict):
     def __str__(self):
         return f"ID: {self.data['Q_id']}, Question: {self.data['question']}, Score: {self.data['score']}"
 
+    def __eq__(self, other):
+        return self.data["Q_id"] == other.data["Q_id"] and self.data["question"] == other.data["question"] and \
+               self.data["answer"] == other.data["answer"] and self.data["score"] == other.data["score"]
 
 class MultipleChoice(Question):
     """

@@ -5,24 +5,27 @@ from response import Response
 
 
 class Quiz:
-    def __init__(self, title = "untitled_quiz", questions=None, responses={}):
+    def __init__(self, title = "untitled_quiz", questions = None, responses = None):
         self.title = title
         self.total_score = 0
 
         self.questions = {}
+        self.responses = responses if responses is not None else {}
         if questions is not None:
             self.add_questions(questions)
-        self.responses = responses
 
     def __str__(self):
         return f"\n\nQuiz_Title: {self.title} \n\nTotal_Score: {self.total_score} \n\nQuestions: {self.questions} \n\nResponses: {self.responses}"
 
+    def __eq__(self, other):
+        return self.title == other.title and self.total_score == other.total_score and self.questions == other.questions
+    
     def clone(self):
         """
         Clone the quiz object.
         :return: Quiz object
         """
-        return Quiz(self.questions, {}, self.API_KEY)
+        return Quiz(self.title, self.questions.copy(), self.responses.copy())
 
     def add_questions(self, questions=None):
         """
