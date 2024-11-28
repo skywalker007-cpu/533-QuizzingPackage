@@ -1,5 +1,6 @@
 from Quizzes.quiz import Quiz
 import Questions.question as question
+import Responses.response as Res
 
 
 def main():

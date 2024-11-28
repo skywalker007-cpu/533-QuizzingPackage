@@ -8,3 +8,7 @@ class Response:
 
     def __str__(self):
         return f"Student ID: {self.student_id}, Responses to the quiz: {self.response}"
+
+    def __repr__(self):
+        # better for understanding the object format.
+        return f"Dictionary format: Response(key = {self.student_id}, values = {self.response})"
