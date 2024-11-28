@@ -1,5 +1,6 @@
 from Quizzes.quiz import Quiz
 import Questions.question as question
+from Quizzes.marker import mark
 
 
 def main():
@@ -33,9 +34,11 @@ def main():
     # quiz_1.add_responses()
     print(quiz_1)
 
-    quiz_1.export_to_markdown()
-    quiz_1.export_to_html()
-    quiz_1.export_to_pdf()
+    quiz_1.take_quiz("12456")
+    print(mark(quiz_1, "12456"))
+    # quiz_1.export_to_markdown()
+    # quiz_1.export_to_html()
+    # quiz_1.export_to_pdf()
 
 if __name__ == "__main__":
     main()
