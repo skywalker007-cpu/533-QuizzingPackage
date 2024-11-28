@@ -1,7 +1,7 @@
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
-import question
-from response import Response
+import Questions.question as question
+from Responses.response import Response
 
 
 class Quiz:

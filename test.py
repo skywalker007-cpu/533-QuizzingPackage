@@ -1,6 +1,6 @@
 import unittest
-from quiz import Quiz
-import question
+from Quizzes.quiz import Quiz
+import Questions.question as question
 
 class TestQuiz(unittest.TestCase):
     def setUp(self):
