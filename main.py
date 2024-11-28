@@ -30,12 +30,8 @@ def main():
 
     print(quiz_1)
     print(quiz_2)
-    # quiz_1.add_responses()
-    print(quiz_1)
-
-    quiz_1.export_to_markdown()
-    quiz_1.export_to_html()
-    quiz_1.export_to_pdf()
+    quiz_1.add_responses()
+    print(quiz_1.responses['123'])
 
 if __name__ == "__main__":
     main()

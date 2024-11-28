@@ -50,5 +50,9 @@ class TestQuiz(unittest.TestCase):
         
         self.quiz_for_editing.remove_questions([1,2,3])
         self.assertEqual(0, len(self.quiz_for_editing.questions))
+    
+    def test_add_responses(self):
+        self.quiz_1.add_responses({"123": [1, 2, 3]})
+        print(self.quiz_1.responses['123'])
         
 unittest.main(argv=[''], exit=False)
