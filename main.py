@@ -1,5 +1,6 @@
 from Quizzes.quiz import Quiz
 import Questions.question as question
+from Quizzes.marker import mark
 
 
 def main():
