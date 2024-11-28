@@ -18,7 +18,14 @@ class Quiz:
         return f"\n\nQuiz_Title: {self.title} \n\nTotal_Score: {self.total_score} \n\nQuestions: {self.questions} \n\nResponses: {self.responses}"
 
     def __eq__(self, other):
-        return self.title == other.title and self.total_score == other.total_score and self.questions == other.questions
+        def compare_questions(q1, q2):
+            if len(q1) != len(q2):
+                return False
+            for key, value in q1.items():
+                if key not in q2 or value != q2[key]:
+                    return False
+            return True
+        return self.title == other.title and self.total_score == other.total_score and compare_questions(self.questions, other.questions)
     
     def clone(self):
         """
@@ -82,11 +89,13 @@ class Quiz:
             if isinstance(question_ids, list):
                 for question_id in question_ids:
                     if question_id in self.questions:
+                        self.total_score -= self.questions[question_id].data["score"]
                         del self.questions[question_id]
                     else:
                         raise Exception("ID Error: Question ID " + str(question_id) + " does not exist")
             elif isinstance(question_ids, int):
                 if question_ids in self.questions:
+                    self.total_score -= self.questions[question_ids].data["score"]
                     del self.questions[question_ids]
                 else:
                     raise Exception("ID Error: Question ID " + str(question_ids) + " does not exist")
