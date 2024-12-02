@@ -1,6 +1,5 @@
 from Quizzes.quiz import Quiz
 import Questions.question as question
-import Responses.response as Res
 
 
 def main():
@@ -26,8 +25,8 @@ def main():
     # quiz_1.add_questions({8: Q8, 9: Q9})
 
     quiz_2 = Quiz("quiz_2", [Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9])
-    quiz_2.remove_questions(3)
-    quiz_2.remove_questions([1, 9, 8, 7, 5, 2, 4])
+    # quiz_2.remove_questions(3)
+    # quiz_2.remove_questions([1, 9, 8, 7, 5, 2, 4])
     
     # quiz_3 = quiz_1.clone()
     
