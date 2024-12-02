@@ -1,4 +1,6 @@
-# Quiz Python Package Description
+# Quiz Python Package Description 
+
+**Group members: Zetian Zhao, Haoxiang Xu**
 
 ## [Table of Contents](#table-of-contents)
 
@@ -44,8 +46,8 @@ pip install git+
   quiz = Quiz(questions, responses, API_KEY)
   ```
 
-  - `questions` Optional (List[Question]): A list of `Question` objects that represent the questions in the quiz.
-  - `responses` Optional (List[Response]): A list of `Response` objects that represent the responses to the quiz.
+  - `questions` Optional (List[Question]): A dictionary of `Question` objects that represent the questions in the quiz.
+  - `responses` Optional (List[Response]): A dictionary of `Response` objects that represent the responses to the quiz.
   - `API_KEY` Optional (str): The API key used to access the OpenAI API for marking the responses.
 
 <a name="list-of-classes"></a>
@@ -60,13 +62,13 @@ pip install git+
 
 #### Included Variables
 
-- `questions`: A list of `Question` objects that each element in the list represent one question from the quiz.
+- `questions`: A nested dictionary of `Question` objects that each key-value pair represent the question ID and the question object.
 - `responses`: A dictionary of `Response` objects that each key-value pair represent the student ID and their response to the quiz.
 - `API_KEY` (str): The API key used to access the OpenAI API for marking the responses.
 
 #### Included Methods
 
-- `__init__(self, questions: List[Question], responses: List[Response], API_KEY: str)`: The constructor method for the `Quiz` class. It initializes the `questions`, `responses`, and `API_KEY` variables.
+- `__init__(self, questions: List[Question], responses: dict[str, Response], API_KEY: str)`: The constructor method for the `Quiz` class. It initializes the `questions`, `responses`, and `API_KEY` variables.
 - `__str__(self)`: A method that returns a string that list the questions.
 - `add_question(self, question: Question)`: A method that adds a `Question` object to the `questions` list.
   **(unable to add a question if the quiz has already started, and will show "quiz is already started, and you cannot add question anymore!" to the user for notification.)**
@@ -84,7 +86,7 @@ pip install git+
 
 ### `Question`
 
-- **Description**: This class represents a question in the quiz, and data format is following a dictionary format, which is that the question's id is the key, and some subkeys that are having corresponding values such as question text and corresponding correct answer, score, and type of the question.
+- **Description**: This class represents a question in the quiz, and data format is following a dictionary format, which the values are question id, question text, correct answer, score, and type of the question with corresponding key.
 
 #### Included Variables
 
@@ -109,9 +111,9 @@ pip install git+
 
 ### `Response`
 
-- **Description**: This class represents a response from a student to a question in the quiz. Moreover, the class format is the dictionary format, which is that the student_id is the key, and their answers as response are the values.
+- **Description**: This class represents a response from a student to a question in the quiz. 
 
-#### Included Variables
+#### Included Variable
 
 - `student_id`: The ID of the student who submitted the response.
 - `response`: a JSON format object that contains the student's response to the question.
