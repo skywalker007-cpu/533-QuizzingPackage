@@ -1,4 +1,6 @@
-# Quiz Python Package Description
+# Quiz Python Package Description 
+
+**Group members: Zetian Zhao, Haoxiang Xu**
 
 ## [Table of Contents](#table-of-contents)
 

@@ -135,6 +135,11 @@ class Quiz:
             print(e)
 
     def add_responses(self, responses = None):
+        '''
+        Add response to the question to the quiz object so we can easily get it for other use.
+        :param responses: Response object or list of Response objects.
+        :raises TypeError: If the response is not a valid response type.
+        '''
         try:
             if isinstance(responses, Response):
                 self.responses[responses.student_id] = responses
@@ -167,6 +172,9 @@ class Quiz:
             print(e)
 
     def take_quiz(self, student_id):
+        '''
+        The function that enable the quiz to begin and user will enter their response for the questions in the quiz.
+        '''
         print(f"Student {student_id}, please answer the following questions:")
         # store the answer list.
         response_list = []
@@ -187,6 +195,9 @@ class Quiz:
             self.marks[student_id] = self.marker.mark(self, student_id)
 
     def get_responses(self, student_ids = None):
+        '''
+        A function that return student's response and their score to the quiz.
+        '''
         if isinstance(student_ids, list):
             response_list = ""
             for student_id in student_ids:
