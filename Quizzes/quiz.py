@@ -1,8 +1,8 @@
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
-import Questions.question as question
-from Questions.question import ShortAnswerQuestion
-from Responses.response import Response
+import Objects.question as question
+from Objects.question import ShortAnswerQuestion
+from Objects.response import Response
 from Quizzes.marker import Marker
 
 class Quiz:

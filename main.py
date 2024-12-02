@@ -1,5 +1,5 @@
 from Quizzes.quiz import Quiz
-import Questions.question as question
+import Objects.question as question
 
 
 def main():

@@ -1,6 +1,6 @@
-from Questions.question import ShortAnswerQuestion
-from Responses.response import Response
-import Questions.question as question
+from Objects.question import ShortAnswerQuestion
+from Objects.response import Response
+import Objects.question as question
 
 class Marker:
     def __init__(self):
