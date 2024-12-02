@@ -51,7 +51,7 @@ class ShortAnswerQuestion(Question):
 
     def __str__(self):
         notification = self.data["notice"]
-        return f"{super().__str__()}\Note:\n{notification}"
+        # return f"{super().__str__()}\Note:\n{notification}"
 
 
 class TrueFalseQuestion(Question):
