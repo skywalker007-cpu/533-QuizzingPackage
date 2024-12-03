@@ -1,4 +1,16 @@
-Note:  skywalker007-cpu - Zetian Zhao
+Note: skywalker007-cpu - Zetian Zhao
+
+commit c95e499318eac03ec06a998ad90887d72fa30bd3
+Author: skywalker007-cpu <656749873@qq.com>
+Date:   Mon Dec 2 17:28:40 2024 -0800
+
+    add extra function to marker module
+
+commit dd59c9463486c15c54b87b460219ac240e435f8b
+Author: skywalker007-cpu <656749873@qq.com>
+Date:   Mon Dec 2 17:08:32 2024 -0800
+
+    add the git history as a text file
 
 commit 429dcc83e9c364e6cec1ecc060722f30e62eb6e3
 Author: skywalker007-cpu <656749873@qq.com>
