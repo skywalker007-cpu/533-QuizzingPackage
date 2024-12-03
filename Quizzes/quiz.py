@@ -1,36 +1,9 @@
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
-import Questions.question as question
-from Questions.question import ShortAnswerQuestion
-from Responses.response import Response
-
-class Marker:
-    def __init__(self):
-        pass
-    def mark(self, quiz, studentId): 
-        '''
-        Mark a quiz based on the response and question's answers.
-        '''
-        total_mark = 0
-        formal_answer_list = []
-        verifier = False
-        user_response_list = quiz.responses[studentId].response
-        if isinstance(quiz, Quiz):
-            for q_content in quiz.questions.values():
-                formal_answer_list.append(q_content["answer"])
-            for i in range(len(user_response_list)):
-                if user_response_list[i] == formal_answer_list[i]:
-                    verifier = True
-                    total_mark += 1
-                else:
-                    verifier = False
-
-        if(not verifier and isinstance(quiz, ShortAnswerQuestion)):
-        # need to handle short answer question here.
-            pass
-
-        # return total score student get.
-        return total_mark
+import Objects.question as question
+from Objects.question import ShortAnswerQuestion
+from Objects.response import Response
+from Quizzes.marker import Marker
 
 class Quiz:
     def __init__(self, title = "untitled_quiz", questions = None):
@@ -192,11 +165,11 @@ class Quiz:
 
     def mark_quiz(self):
         for student_id in self.responses:
-            self.marks[student_id] = self.marker.mark(self, student_id)
+            self.marks[student_id] = self.marker.mark(self.questions, self.responses[student_id].response)
 
     def get_responses(self, student_ids = None):
         '''
-        A function that return student's response and their score to the quiz.
+        The function that add response to the quiz object with corresponding mark that the mark calculated from the response.
         '''
         if isinstance(student_ids, list):
             response_list = ""

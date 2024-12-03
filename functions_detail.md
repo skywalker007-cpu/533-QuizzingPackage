@@ -29,9 +29,17 @@
         - __str__ function for printing out the quiz in certain format(print function)
         - __eq__ function for comparing if there are two `identical quiz objects`(compare function)
         - __clone__ function that simply `clone` a quiz object from an existed one.
-        - __add-questions__ function that add `a question or list of it` to the specific quiz.
+        - __add-questions__ function that add `a question object or a list of the objects` to the specific quiz.
         - __remove-questions__ function that remove a question or list of it from the specific quiz with question id/ids. In other words, we will handle with both `one single id or a id list`.
-        - __add-responses__ function that add `a response or list of it` to the specific quiz. Thus, it will be used in the `take-quiz` function when user answer the questions.
+        - __add-responses__ function that add `a response or list of it` to the specific quiz for taking the quiz or just add it directly as option. In other words, the `take_quiz` function will be used in this function to enable the quiz happen.
         - __take-quiz__ function that take student id as paramter and begin to ask the question store in the quiz and also store the `user input` to a new `response object`. Finally the response object will be store in the `responses dictionary`.
         - __mark-quiz__ function that store student's mark about the quiz into a marks dictionary.
         - __get-responses__ function that return student's response about the quiz with the calculated score they get.
+
+---
+
+- #### Marker Module
+    - ##### marker class
+        - __init__ function which is just for `placeholder` initialization.
+        - __mark__ function that return student's mark about the quiz by comparing therir `response` during the quiz session with the **pre-set answer** in the `quiz` object.
+        - __validate-inputs__ function is used to check the `validity of user's response in format` before marking the quiz.

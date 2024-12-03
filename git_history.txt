@@ -1,0 +1,211 @@
+Note: skywalker007-cpu - Zetian Zhao
+
+commit c95e499318eac03ec06a998ad90887d72fa30bd3
+Author: skywalker007-cpu <656749873@qq.com>
+Date:   Mon Dec 2 17:28:40 2024 -0800
+
+    add extra function to marker module
+
+commit dd59c9463486c15c54b87b460219ac240e435f8b
+Author: skywalker007-cpu <656749873@qq.com>
+Date:   Mon Dec 2 17:08:32 2024 -0800
+
+    add the git history as a text file
+
+commit 429dcc83e9c364e6cec1ecc060722f30e62eb6e3
+Author: skywalker007-cpu <656749873@qq.com>
+Date:   Mon Dec 2 17:03:15 2024 -0800
+
+    clean the main file and modify the detail md file
+
+commit c2b79da50f264cb6bc3beebe8515ab4b8f4ceab3
+Author: Haoxiang Xu <haoxiang-xu>
+Date:   Mon Dec 2 15:14:41 2024 -0800
+
+    project structure changed
+
+commit 5727a4855753190c31b7de0307688dffc365dfd5
+Author: Haoxiang Xu <haoxiang-xu>
+Date:   Mon Dec 2 13:47:27 2024 -0800
+
+    'n' added
+
+commit 51caf9d9362ad422b8f3a0057f3576791c103748
+Author: Haoxiang Xu <haoxiang-xu>
+Date:   Mon Dec 2 13:43:06 2024 -0800
+
+    refactor marker into a new module
+
+commit e7cc26ec1f979992c7bf1531955452221eeb1531
+Merge: 92c91c9 eafe228
+Author: skywalker007-cpu <77311885+skywalker007-cpu@users.noreply.github.com>
+Date:   Mon Dec 2 13:16:58 2024 -0800
+
+    Merge pull request #1 from skywalker007-cpu/question_class
+    
+    Question class
+
+commit eafe2285a922da9b020a5496caa24aa1da091e19
+Author: skywalker007-cpu <656749873@qq.com>
+Date:   Mon Dec 2 13:12:48 2024 -0800
+
+    description md file for the functions and simply add members name to the readme flie
+
+commit 2641a95dbc94d775ab5db64e8748f915ede8d520
+Author: skywalker007-cpu <656749873@qq.com>
+Date:   Mon Dec 2 12:37:50 2024 -0800
+
+    local
+
+commit 669eb2030d610cd3e05973018c2abfd29d55aaca
+Author: skywalker007-cpu <656749873@qq.com>
+Date:   Thu Nov 28 00:34:56 2024 -0800
+
+    change a bit for response module
+
+commit 6dd9d82655ffcf22aee601e46b29f841cb377a53
+Author: Haoxiang Xu <haoxiang-xu>
+Date:   Thu Nov 28 15:22:11 2024 -0800
+
+    Merge branch 'question_class' of https://github.com/skywalker007-cpu/533-QuizzingPackage into question_class
+
+commit da0fa9937bbcd31b75dadea4fa30176dad4edc63
+Merge: d142170 57753b8
+Author: Haoxiang Xu <haoxiang-xu>
+Date:   Thu Nov 28 14:25:21 2024 -0800
+
+    Merge branch 'question_class' of https://github.com/skywalker007-cpu/533-QuizzingPackage into question_class
+
+commit d1421701a33b213b5478d0826223b31af52d22df
+Author: Haoxiang Xu <haoxiang-xu>
+Date:   Thu Nov 28 14:23:03 2024 -0800
+
+    bug fixed
+
+commit 57753b83fab1ff4dbe3c667f1f1b08cec0912fda
+Merge: 80c53f6 c1195d3
+Author: skywalker007-cpu <656749873@qq.com>
+Date:   Thu Nov 28 13:54:57 2024 -0800
+
+    Merge branch 'question_class' of https://github.com/skywalker007-cpu/533-QuizzingPackage into question_class
+
+commit 80c53f68b6a92f9adefd3eb83739b37e44220eef
+Author: skywalker007-cpu <656749873@qq.com>
+Date:   Thu Nov 28 13:53:52 2024 -0800
+
+    marker function
+
+commit c1195d31b6916d2c8d831047dca24f3caaa261c6
+Author: Haoxiang Xu <haoxiang-xu>
+Date:   Thu Nov 28 12:16:37 2024 -0800
+
+    new tests added
+
+commit b3e72be486bc071baa90129a54771437733349be
+Author: Haoxiang Xu <haoxiang-xu>
+Date:   Thu Nov 28 10:48:46 2024 -0800
+
+    requirement doc added
+
+commit d6ff32ca5c1b3c3afd04183aa4129d0ef9001e74
+Author: Haoxiang Xu <haoxiang-xu>
+Date:   Thu Nov 28 10:48:19 2024 -0800
+
+    package structure changed
+
+commit 7eb89edd435cf23993f5d98b7851dfe5790d9f71
+Author: Haoxiang Xu <haoxiang-xu>
+Date:   Thu Nov 28 10:21:24 2024 -0800
+
+    ignore __pycache__
+
+commit aad5c5abccc498464e6542d7611e3013bc5b97ee
+Author: Haoxiang Xu <haoxiang-xu>
+Date:   Thu Nov 28 10:18:46 2024 -0800
+
+    unit test sample implemented
+
+commit fa9940a32fc2b9353232a116860ff866e897a2ee
+Author: Haoxiang Xu <haoxiang-xu>
+Date:   Tue Nov 19 20:03:02 2024 -0800
+
+    export function implemented
+
+commit 3078e3b0ea696502eddac5316717d2e20648e647
+Author: skywalker007-cpu <77311885+skywalker007-cpu@users.noreply.github.com>
+Date:   Tue Nov 19 16:11:04 2024 -0800
+
+    Rename Question.py to question.py
+
+commit 82f50beb762743d3838d9504c1a1296887b33c58
+Author: skywalker007-cpu <77311885+skywalker007-cpu@users.noreply.github.com>
+Date:   Tue Nov 19 16:10:47 2024 -0800
+
+    Rename Quiz.py to quiz.py
+
+commit 87a15b068fc3691c9d00895ca08dec6404000007
+Author: skywalker007-cpu <656749873@qq.com>
+Date:   Tue Nov 19 16:01:24 2024 -0800
+
+    response class creation and some minor change in the readme file
+
+commit 3fe68feaee5f418a4bf59df06395c80a7ac8c538
+Author: Haoxiang Xu <haoxiang-xu>
+Date:   Mon Nov 18 21:28:43 2024 -0800
+
+    1118: can remove multiple items
+
+commit d7c4c26894920336faed97efd2aae4728e7ae307
+Author: Haoxiang Xu <haoxiang-xu>
+Date:   Mon Nov 18 21:15:40 2024 -0800
+
+    1118: Quiz total score changes when adding new questions
+
+commit b90035bde6faadba04dc82419832cab5aa564fc8
+Author: Haoxiang Xu <haoxiang-xu>
+Date:   Mon Nov 18 21:12:51 2024 -0800
+
+    1118: Quiz class added
+
+commit 9dc108dfa588f79c95748d05bf24aff50dd8530d
+Merge: 70289a9 92c91c9
+Author: Haoxiang Xu <haoxiang-xu>
+Date:   Mon Nov 18 18:58:30 2024 -0800
+
+    Merge branch 'main' into question_class
+
+commit 92c91c982977b1421c59f30bc4bc451944d548e0
+Author: Haoxiang Xu <haoxiang-xu>
+Date:   Mon Nov 18 18:53:58 2024 -0800
+
+    1118: readme updated
+
+commit 70289a9f01ece45d184dcee142bc870ec38d6a2a
+Author: skywalker007-cpu <656749873@qq.com>
+Date:   Mon Nov 18 18:43:48 2024 -0800
+
+    question.py for quesiton class and its subclass
+
+commit 1d56e6011b82117ab31f1bc36d1d4dd8a258132a
+Author: skywalker007-cpu <656749873@qq.com>
+Date:   Mon Nov 18 18:10:16 2024 -0800
+
+    update the description of the package in the readme file
+
+commit 9c5cebfbea64c23611d271ef0561c433efaa885a
+Author: skywalker007-cpu <77311885+skywalker007-cpu@users.noreply.github.com>
+Date:   Mon Nov 18 15:15:07 2024 -0800
+
+    Delete .DS_Store
+
+commit 85473c52a46406c0afebdb8d1b800e255233322d
+Author: Haoxiang Xu <haoxiang-xu>
+Date:   Mon Nov 18 15:14:43 2024 -0800
+
+    1118: gitignore added
+
+commit c87b7955711175609b76a8d70541a22b0918eb2a
+Author: Haoxiang Xu <haoxiang-xu>
+Date:   Mon Nov 18 15:11:37 2024 -0800
+
+    readme added

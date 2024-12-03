@@ -1,7 +1,7 @@
 import unittest
 from Quizzes.quiz import Quiz
-import Questions.question as question
-from Responses.response import Response
+import Objects.question as question
+from Objects.response import Response
 
 class TestQuiz(unittest.TestCase):
     def setUp(self):
