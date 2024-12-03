@@ -169,7 +169,7 @@ class Quiz:
 
     def get_responses(self, student_ids = None):
         '''
-        A function that return student's response and their score to the quiz.
+        The function that add response to the quiz object with corresponding mark that the mark calculated from the response.
         '''
         if isinstance(student_ids, list):
             response_list = ""
