@@ -42,3 +42,4 @@
     - ##### marker class
         - __init__ function which is just for `placeholder` initialization.
         - __mark__ function that return student's mark about the quiz by comparing therir `response` during the quiz session with the **pre-set answer** in the `quiz` object.
+        - _validate-inputs_ function is used to check the `validity of user's response in format` before marking the quiz.

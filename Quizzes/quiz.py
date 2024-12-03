@@ -165,7 +165,7 @@ class Quiz:
 
     def mark_quiz(self):
         for student_id in self.responses:
-            self.marks[student_id] = self.marker.mark(self.questions, self.responses[student_id].response, student_id)
+            self.marks[student_id] = self.marker.mark(self.questions, self.responses[student_id].response)
 
     def get_responses(self, student_ids = None):
         '''
