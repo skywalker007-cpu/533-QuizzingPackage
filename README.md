@@ -1,6 +1,6 @@
 # Quiz Python Package Description 
 
-**Group members: Zetian Zhao, Haoxiang Xu**
+**Group members: Zetian Zhao(skywalker007-cpu), Haoxiang Xu**
 
 ## [Table of Contents](#table-of-contents)
 
