@@ -10,11 +10,9 @@ class TestQuestion(unittest.TestCase):
                                Question(1, "What is the capital of France?", "Paris", score=5)]
 
     def setUp(self):
-        print("Setting up resources for a test case...")
         self.test_question = Question(2, "What is 2 + 2?", "4", score=1)
 
     def tearDown(self):
-        print("Cleaning up after a test case...")
         self.test_question = None
 
     @classmethod
@@ -45,11 +43,9 @@ class TestMultipleChoice(unittest.TestCase):
         cls.sample_question = MultipleChoice(3, "What is the largest planet?", "Jupiter", score=3, options=["Earth", "Mars", "Jupiter", "Venus"])
 
     def setUp(self):
-        print("Setting up resources for a test case...")
         self.test_question = MultipleChoice(4, "What is 5 + 3?", "8", score=1, options=["6", "7", "8", "9"])
 
     def tearDown(self):
-        print("Cleaning up after a test case...")
         self.test_question = None
 
     @classmethod
@@ -78,12 +74,10 @@ class TestShortAnswerQuestion(unittest.TestCase):
         cls.sample_question = ShortAnswerQuestion(5, "Define AI.", "Artificial Intelligence", score=5, notice="Please be concise.")
 
     def setUp(self):
-        print("Setting up resources for a test case...")
         self.test_question = [ShortAnswerQuestion(6, "What is DNA?", "Deoxyribonucleic Acid", score=3, notice="Answer in one sentence."),
                               ShortAnswerQuestion(7, "What is Dragon?", "A mythical creature ", score=2, notice="Answer in one sentence.")]
 
     def tearDown(self):
-        print("Cleaning up after a test case...")
         self.test_question = None
 
     @classmethod
@@ -111,11 +105,9 @@ class TestTrueFalseQuestion(unittest.TestCase):
         cls.sample_question = TrueFalseQuestion(7, "The Earth is flat.", "False", score=1)
 
     def setUp(self):
-        print("Setting up resources for a test case...")
         self.test_question = TrueFalseQuestion(8, "Water freezes at 0°C.", "True", score=1)
 
     def tearDown(self):
-        print("Cleaning up after a test case...")
         self.test_question = None
 
     @classmethod
