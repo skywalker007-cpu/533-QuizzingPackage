@@ -5,7 +5,7 @@ class TestResponse(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         # Runs once before all test cases in this class
-        print("Setting up shared resources for TestResponse...")
+        print("Setting up shared resources for all tests...")
         cls.shared_responses = [
             response.Response(101, ['A', 'B', 'C']),
             response.Response(102, ['B', 'C', 'D']),
@@ -13,12 +13,12 @@ class TestResponse(unittest.TestCase):
 
     def setUp(self):
         # Runs before every test case
-        print("Setting up resources for a test case...")
+        print("Setting up resources for a test cases...")
         self.test_response = response.Response(103, ['C', 'D', 'A'])
 
     def tearDown(self):
         # Runs after every test case
-        print("Cleaning up after a test case...")
+        print("Cleaning up after a test case has been executed...")
         self.test_response = None
 
     @classmethod
