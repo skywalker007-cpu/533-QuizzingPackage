@@ -4,16 +4,18 @@ import Objects.question as question
 from Objects.response import Response
 
 class TestQuiz(unittest.TestCase):
-    def setUp(self):
-        self.Q1 = question.MultipleChoice(1, "What is the capital of France?", "Paris", 1,
+    @classmethod
+    def setUpClass(cls):
+        cls.Q1 = question.MultipleChoice(1, "What is the capital of France?", "Paris", 1,
                                         ["Paris", "London", "Berlin", "Madrid"])
-        self.Q2 = question.ShortAnswerQuestion(2, "What is the capital of France?", "Paris", 1, "Please answer in one word")
-        self.Q3 = question.TrueFalseQuestion(3, "Is Paris the capital of France?", "True", 1, ["True", "False"])
-        self.Q4 = question.MultipleChoice(4, "What is the capital of Germany?", "Berlin", 1,
+        cls.Q2 = question.ShortAnswerQuestion(2, "What is the capital of France?", "Paris", 1, "Please answer in one word")
+        cls.Q3 = question.TrueFalseQuestion(3, "Is Paris the capital of France?", "True", 1, ["True", "False"])
+        cls.Q4 = question.MultipleChoice(4, "What is the capital of Germany?", "Berlin", 1,
                                         ["Paris", "London", "Berlin", "Madrid"])
-        self.Q5 = question.ShortAnswerQuestion(5, "What is the capital of Germany?", "Berlin", 1, "Please answer in one word")
-        self.Q6 = question.TrueFalseQuestion(6, "Is Berlin the capital of Germany?", "True", 1, ["True", "False"])
+        cls.Q5 = question.ShortAnswerQuestion(5, "What is the capital of Germany?", "Berlin", 1, "Please answer in one word")
+        cls.Q6 = question.TrueFalseQuestion(6, "Is Berlin the capital of Germany?", "True", 1, ["True", "False"])
         
+    def setUp(self):
         self.quiz_1 = Quiz()
         
         self.quiz_1.add_questions(self.Q1)
