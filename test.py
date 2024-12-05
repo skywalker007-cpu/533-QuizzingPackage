@@ -74,6 +74,8 @@ class TestQuiz(unittest.TestCase):
         self.quiz_1.add_responses({"002" : Response("002", ["Paris", "Paris", "True"])})
         self.quiz_1.add_responses({"003" : Response("003", ["Paris", "Paris", "True"])})
         self.assertEqual(3, len(self.quiz_1.responses))
-        
+       
+    def test(self):
+        return 
 
 unittest.main(argv=[''], exit=False)
