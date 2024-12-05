@@ -33,8 +33,8 @@ class Marker:
         '''
         Validates the response input before marking the quiz.
         '''
-        if len(question_list) != len(response):
-            raise ValueError("The number of responses does not match the number of questions in the quiz.")
         if not isinstance(response, list):
             raise ValueError("The response is not a valid list.")
+        if len(question_list) != len(response):
+            raise ValueError("The number of responses does not match the number of questions in the quiz.")
 
