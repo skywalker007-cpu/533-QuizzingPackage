@@ -28,7 +28,13 @@ class Quiz:
                 if key not in q2 or value != q2[key]:
                     return False
             return True
-        return self.title == other.title and self.total_score == other.total_score and compare_questions(self.questions, other.questions)
+        
+        try:
+            if not isinstance(other, Quiz):
+                raise TypeError("Invalid Type Error:" + str(type(other)) + " is not a valid quiz type")
+            return self.title == other.title and self.total_score == other.total_score and compare_questions(self.questions, other.questions)
+        except TypeError as e:
+            print(e)
     
     def clone(self):
         """
@@ -171,25 +177,28 @@ class Quiz:
         '''
         The function that add response to the quiz object with corresponding mark that the mark calculated from the response.
         '''
-        if isinstance(student_ids, list):
-            response_list = ""
-            for student_id in student_ids:
-                if student_id in self.marks:
-                    response_list += str(self.responses[student_id]) + f", Mark: {self.marks[student_id]}\n"
+        try:
+            if isinstance(student_ids, list):
+                response_list = ""
+                for student_id in student_ids:
+                    if student_id in self.marks:
+                        response_list += str(self.responses[student_id]) + f", Mark: {self.marks[student_id]}\n"
+                    else:
+                        response_list += str(self.responses[student_id]) + "\n"
+                return response_list
+            elif isinstance(student_ids, str):
+                if student_ids in self.marks:
+                    return self.responses[student_ids] + f", Mark: {self.marks[student_ids]}"
                 else:
-                    response_list += str(self.responses[student_id]) + "\n"
-            return response_list
-        elif isinstance(student_ids, str):
-            if student_ids in self.marks:
-                return self.responses[student_ids] + f", Mark: {self.marks[student_ids]}"
+                    return self.responses[student_ids]
             else:
-                return self.responses[student_ids]
-        else:
-            response_list = ""
-            for student_id, response in self.responses.items():
-                if student_id in self.marks:
-                    response_list += str(response) + f", Mark: {self.marks[student_id]}\n"
-                else:
-                    response_list += str(response) + "\n"
-                
-            return response_list
+                response_list = ""
+                for student_id, response in self.responses.items():
+                    if student_id in self.marks:
+                        response_list += str(response) + f", Mark: {self.marks[student_id]}\n"
+                    else:
+                        response_list += str(response) + "\n"
+                    
+                return response_list
+        except Exception as e:
+            print(e)
