@@ -2,6 +2,8 @@
 
 **Group members: Zetian Zhao(skywalker007-cpu), Haoxiang Xu**
 
+**Package Link:** https://pypi.org/project/QuizzingPackage/0.0.1/
+
 ## [Table of Contents](#table-of-contents)
 
 [![Build Status](https://app.travis-ci.com/skywalker007-cpu/533-QuizzingPackage.svg?token=WAveNzXdfMUy8gZvWNvY&branch=main)](https://app.travis-ci.com/skywalker007-cpu/533-QuizzingPackage)
